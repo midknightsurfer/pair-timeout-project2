@@ -16,16 +16,16 @@ Examples:
 ***********************************************************************/
 
 function dynamicIntervalCount(cb, delay, amount) {
-  const interval = setInterval(function(){
-    if(amount === undefined){
-      cb()
-    }
-  }, delay)
-  amount--
-  if(amount === 0){
-    clearInterval(interval)
-  }
-return interval;
+   if( amount === undefined){
+    return setInterval(cb, delay)
+     }
+    const interval = setInterval(function(){
+      cb();
+      amount--
+      if(amount === 0){
+        clearInterval(interval)
+      }
+    }, delay)
   }
 
 //   if(amount === undefined){
